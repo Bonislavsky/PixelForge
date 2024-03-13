@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Github from '@uiw/react-color-github';
 
-
 const colorsArray = [
   "#f0f8ff", // aliceblue
   "#faebd7", // antiquewhite

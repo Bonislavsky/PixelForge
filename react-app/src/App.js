@@ -3,6 +3,9 @@ import "react-resizable/css/styles.css";
 import GridLayout from 'react-grid-layout';
 import React, { useState } from 'react';
 import ColorPicker from "./Components/ColorPicker";
+import Canvas from "./Components/Canvas/Canvas";
+import Context from "./Components/Contexts/testCon";
+
 
 function App() {
   const availableHandles = ["s", "w", "e", "n", "sw", "nw", "se", "ne"];
@@ -35,9 +38,13 @@ function App() {
       <div key="buttons" style={modernStyle}>кнопки</div>
       <div key="wholePicture" style={modernStyle}>целый рисунок</div>
 
-      <div key="palette" style={modernStyle}><ColorPicker/></div>
+       <div key="palette" style={modernStyle}>
+       <Context>
+          <ColorPicker/>
+        </Context>
+        </div>
 
-      <div key="canvas" style={modernStyle}></div>
+      <div key="canvas" style={modernStyle}><Canvas/></div>
       <div key="canvas settings" style={modernStyle}>настройки холста</div>
       <div key="custom palette" style={modernStyle}>кастомная палитра</div>     
       <div key="brushes" style={modernStyle}>кисти</div>
