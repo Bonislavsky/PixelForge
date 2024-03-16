@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Github from '@uiw/react-color-github';
+import React, { useState, useContext } from 'react';
+import { CursorContext } from "./Context";
 
 const colorsArray = [
   "#f0f8ff", // aliceblue
@@ -149,16 +149,10 @@ const colorsArray = [
   "#9acd32"  // yellowgreen
 ];
 
-  const colorPalette = {
-    display: "flex",
-    gap: "10px",
-  } 
-
-  const handleClick = (color) => {
-    console.log(color); // Вывод кода выбранного цвета в консоль
-  };
-
 const ColorPicker = () => {  
+
+  const cursor = useContext(CursorContext);
+
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {colorsArray.map((color, index) => (
@@ -171,7 +165,7 @@ const ColorPicker = () => {
             margin: '1px',
             cursor: 'pointer', // Добавлен стиль указывающий на курсор
           }}
-          onClick={() => handleClick(color)} // Обработчик клика
+          onClick={() => cursor.UpdateColor(color)}
         ></div>
       ))}
     </div>

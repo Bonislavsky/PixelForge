@@ -4,7 +4,8 @@ import GridLayout from 'react-grid-layout';
 import React, { useState } from 'react';
 import ColorPicker from "./Components/ColorPicker";
 import Canvas from "./Components/Canvas/Canvas";
-import Context from "./Components/Contexts/testCon";
+import Context from "./Components/Context";
+
 
 
 function App() {
