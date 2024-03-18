@@ -8,6 +8,8 @@ const Context = (props) =>{
 
     const UpdateColor = (color) => {
         setCursor((prevState) => { 
+            console.log("старый цвет", prevState.Color);
+            console.log("новий цвет",color);
             return { ...prevState, Color: color };
         });
     };
