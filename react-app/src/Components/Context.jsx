@@ -4,17 +4,15 @@ export const CursorContext = createContext();
 
 const Context = (props) =>{
 
-    const [cursor, setCursor] = useState({ Color: "#ffffff" });
+    const [cursor, setCursor] = useState({ Color: "#adff2f" });
 
     const UpdateColor = (color) => {
-        setCursor({ Color: color });
-        console.log('Текущий цвет курсора:', cursor.Color);
+        setCursor((prevState) => { 
+            return { ...prevState, Color: color };
+        });
     };
-
-    const value = {
-        cursor,
-        UpdateColor,
-    }
+    
+    const value = { cursor, UpdateColor };
 
     return <CursorContext.Provider value = {value}>
         {props.children}
