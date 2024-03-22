@@ -7,7 +7,6 @@ import Canvas from "./Components/Canvas";
 import Context from "./Components/Context";
 
 
-
 function App() {
   const availableHandles = ["s", "w", "e", "n", "sw", "nw", "se", "ne"];
   const layoutConfig = [
@@ -35,28 +34,20 @@ function App() {
 
   return (
     <div className="App">
-    <GridLayout className="example-layout" layout={layoutConfig} cols={12} rowHeight={30} width={window.innerWidth-15}>
-      <div key="buttons" style={modernStyle}>кнопки</div>
-      <div key="wholePicture" style={modernStyle}>целый рисунок</div>
-
-       <div key="palette" style={modernStyle}>
-       <Context>
-          <ColorPicker/>
-        </Context>
-        </div>
-
-      <div key="canvas" style={modernStyle}>
-        <Context>
-          <Canvas/>
-        </Context>
-        </div>
-      <div key="canvas settings" style={modernStyle}>настройки холста</div>
-      <div key="custom palette" style={modernStyle}>кастомная палитра</div>     
-      <div key="brushes" style={modernStyle}>кисти</div>
-      <div key="list_layers" style={modernStyle}>список слоев</div>
-      <div key="frame-by-frame_motion" style={modernStyle}>пошаговая анимация</div>
-      <div key="xpen1" style={modernStyle}>пхрень снизу </div>
-    </GridLayout>
+      <Context>
+        <GridLayout className="example-layout" layout={layoutConfig} cols={12} rowHeight={30} width={window.innerWidth-15}>
+          <div key="buttons" style={modernStyle}>кнопки</div>
+          <div key="wholePicture" style={modernStyle}>целый рисунок</div>
+          <div key="palette" style={modernStyle}><ColorPicker/></div>
+          <div key="canvas" style={modernStyle}><Canvas/></div>
+          <div key="canvas settings" style={modernStyle}>настройки холста</div>
+          <div key="custom palette" style={modernStyle}>кастомная палитра</div>     
+          <div key="brushes" style={modernStyle}>кисти</div>
+          <div key="list_layers" style={modernStyle}>список слоев</div>
+          <div key="frame-by-frame_motion" style={modernStyle}>пошаговая анимация</div>
+          <div key="xpen1" style={modernStyle}>пхрень снизу </div>
+        </GridLayout>
+      </Context>
     </div>
   );
 }
