@@ -8,7 +8,10 @@ const Canvas = () => {
         for (let i = 0; i < rows; i++) {
             const row = [];
             for (let j = 0; j < cols; j++) {
-                row[j] = "#ffffff";          
+                row[j] ={
+                    Color: "#ffffff",
+                    IsBackgroundColor: true,
+                }          
             }
             matrix[i] = row;
         }
@@ -37,7 +40,7 @@ const Canvas = () => {
                                     key={colIndex}
                                     style={{
                                         ...blockStyle,
-                                        backgroundColor: cell,
+                                        backgroundColor: cell.Color,
                                       }}
                                     onClick={() => UpdateMatrix(rowIndex, colIndex)}
                                 ></div>
@@ -53,7 +56,10 @@ const Canvas = () => {
         setMatrix(prevMatrix => {
           console.log('попытка обновить матрицу', cursor.Color);
           const updatedMatrix = [...prevMatrix];
-          updatedMatrix[rowIndex][colIndex] = cursor.Color;
+          updatedMatrix[rowIndex][colIndex] = {
+            Color: cursor.Color,
+            IsBackgroundColor: false 
+        };
           return updatedMatrix;
         });
     };
